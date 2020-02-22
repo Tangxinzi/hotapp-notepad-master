@@ -1,0 +1,26 @@
+<view class="container tags">
+  <view class="rows">
+    <view class="flex row" wx:for="{{ tags }}" wx:key="{{ index }}">
+      <view class="flex column line">
+        <text>{{ item }}</text>
+      </view>
+      <!-- <view class="flex after">
+        <image src="/images/next.png" mode="aspectFill" />
+      </view> -->
+    </view>
+  </view>
+  <view class="rows" wx:if="{{ items.length }}">
+    <view class="flex row" wx:for="{{ items }}" wx:key="{{ index }}">
+      <view class="flex column line">
+        <text>{{ item.value }}</text>
+      </view>
+      <view class="flex after" data-key="{{ item.key }}" bindtap="deletaTags">
+        X
+      </view>
+    </view>
+  </view>
+  <modal hidden="{{hiddenmodalput}}" title="请输入标签" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm">
+    <input type="text" name="value" placeholder="标签" bindinput="voteTitle" />
+  </modal>
+  <button bindtap="bindTagCreate" type="primary" style="margin: 6vw 3vw;">添加标签</button>
+</view>

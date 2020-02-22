@@ -1,0 +1,42 @@
+<view class="container user">
+  <view class="rows">
+    <view class="flex userinfo">
+      <open-data class="avatar" type="userAvatarUrl"></open-data>
+      <open-data class="nickname text-decoration" type="userNickName"></open-data>
+    </view>
+  </view>
+  <view class="rows">
+    <navigator url="/pages/tags/tags" class="flex row">
+      <view class="flex column line">
+        <text>管理标签</text>
+      </view>
+      <view class="flex after">
+        <image src="/images/next.png" mode="aspectFill" />
+      </view>
+    </navigator>
+    <button class="flex row" style="" open-type="contact" session-from="weapp">
+      <view class="flex column line">
+        <text>联系客服</text>
+      </view>
+      <view class="flex after">
+        <image src="/images/next.png" mode="aspectFill" />
+      </view>
+    </button>
+    <button class="flex row" style="" open-type="feedback" session-from="weapp">
+      <view class="flex column line">
+        <text>意见反馈</text>
+      </view>
+      <view class="flex after">
+        <image src="/images/next.png" mode="aspectFill" />
+      </view>
+    </button>
+    <button class="flex row" style="" open-type="share" session-from="weapp">
+      <view class="flex column line">
+        <text>分享给好友</text>
+      </view>
+      <view class="flex after">
+        <image src="/images/next.png" mode="aspectFill" />
+      </view>
+    </button>
+  </view>
+</view>

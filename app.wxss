@@ -1,0 +1,32 @@
+/**app.wxss**/
+page {
+  background: #efeff4;
+}
+
+.placeholder {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.tags {
+  width: 100vw;
+  padding: 3.666666%;
+  box-sizing: border-box;
+}
+
+.tags text {
+  font-size: 12px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 2px 8px;
+  border-radius: 13px;
+  color: #3c3c3c;
+  border: 1px solid #CCC;
+}
+
+.tags .active {
+  color: #FFF;
+  border: 1px solid #817878;
+  background-color: #817878;
+}

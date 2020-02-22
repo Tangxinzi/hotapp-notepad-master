@@ -1,0 +1,25 @@
+<form bindsubmit="onSubmit" bindreset="">
+  <view class="container">
+    <!--标签-->
+    <view class="tags">
+      <block wx:for="{{ tags }}" wx:key="{{ item }}">
+        <text class="{{ tagCurrent == index ? 'active' : '' }}" data-tagCurrent="{{ index }}" data-tagValue="{{ item }}" bindtap="bindTopSwitch">{{ item }}</text>
+      </block>
+    </view>
+    <view class='title'>
+      <input name="title" placeholder-class="placeholder" placeholder="输入标题" value="{{item.value.title}}" />
+    </view>
+    <view class='row'>
+      <textarea name="content" class='text' placeholder-class="placeholder" focus="{{focus}}" value="{{ocrString}}" maxlength="-1" placeholder="点击添加内容" />
+    </view>
+    <view class="bottoms">
+      <view class='bottom'>
+        <button bindtap="onChooseImage">图片扫描</button>
+        <button bindtap="toTotalk">语音输入</button>
+      </view>
+      <view class='bottom'>
+        <button formType="submit" class='btn success'>保存</button>
+      </view>
+    </view>
+  </view>
+</form>

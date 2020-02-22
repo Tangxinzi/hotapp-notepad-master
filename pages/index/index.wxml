@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="swiper-item-title swiper-item-title-decoration">
+    <view class="{{ itemCurrent == 0 ? 'item-title active' : 'item-title'  }}" data-itemCurrent="0" bindtap="bindTopSwitch">
+      <text>时间流</text>
+    </view>
+    <view style="border-left: 1px solid #CCC; position: absolute; left: 50%; height: 50px;"></view>
+    <view class="{{ itemCurrent == 1 ? 'item-title active' : 'item-title'  }}" data-itemCurrent="1" bindtap="bindTopSwitch">
+      <text>爱标签</text>
+    </view>
+  </view>
+  <swiper bindchange="bindChange" current="{{ itemCurrent  }}" duration="200" style="{{ swiperItemHeight > 0 ? 'height: ' + (swiperItemHeight) + 'px' : 'auto'  }}">
+    <swiper-item class="{{ itemCurrent == 0 ? 'time swiperActive' : 'time' }}">
+      <block wx:for="{{ items }}" wx:key="{{ index }}">
+        <view class="col" wx:if="{{ item.state != 3  }}">
+          <view class='item notepad {{ item.class }}'>
+            <view class='content'>
+              <view class='txt title'>{{item.value.title}}
+                <button type="button" data-key="{{ item.key }}" data-title="{{ item.value.title }}" data-content="{{ item.value.content }}" open-type="share" name="button" hover-class="none">分享</button>
+              </view>
+              <view class='txt con' data-key="{{ item.key }}" bindtap="onEditItem">{{item.value.content}}</view>
+              <view class='txt footer'>{{item.year}} {{item.month}} {{item.date}} <text data-key="{{ item.key }}" bindtap="onDelete">删除</text></view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </swiper-item>
+    <swiper-item class="{{ itemCurrent == 1 ? 'like swiperActive' : 'like' }}">
+      <!--标签-->
+      <view class="tags">
+        <block wx:for="{{ tags  }}" wx:key="{{ item  }}">
+          <text class="{{ tagCurrent == index ? 'active' : ''  }}" data-tagCurrent="{{ index }}" data-tagValue="{{ item  }}" bindtap="bindTagSwitch">{{ item }}</text>
+        </block>
+      </view>
+      <!--笔记列表-->
+      <view class="cols">
+        <block wx:for="{{ items }}" wx:key="{{ index }}">
+          <view class="col" wx:if="{{ item.state != 3 }}">
+            <view class='item notepad {{item.class}}' data-key="{{ item.key }}" bindtap="onEditItem">
+              <view class='content'>
+                <view class='txt'>{{item.value.title}}</view>
+              </view>
+              <view class='bottom'>
+                <view class='txt'>
+                  {{item.year}} {{item.month}} {{item.date}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

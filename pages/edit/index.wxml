@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<form bindsubmit="onSubmit" bindreset="">
+  <view wx:if="{{ type != 'share' }}" class="container">
+    <!--标签-->
+    <view class="tags">
+      <block wx:for="{{ tags }}" wx:key="{{ item }}">
+        <text class="{{ tagCurrent == index ? 'active' : '' }}" data-tagCurrent="{{ index }}" data-tagValue="{{ item }}" bindtap="bindTopSwitch">{{ item }}</text>
+      </block>
+    </view>
+    <view class='title'>
+      <input name="title" placeholder-class="placeholder" placeholder="在此输入标题" value="{{item.value.title}}" />
+    </view>
+    <view class='row'>
+      <textarea disabled="{{ type == 'share' ? true : false }}" class='text' placeholder-class="placeholder" name="content" focus="{{focus}}" value="{{item.value.content}}" maxlength="-1" placeholder="点击添加文本" />
+    </view>
+    <view class='date placeholder'>
+        {{ item.update_date }}
+    </view>
+    <view class='bottom'>
+         <button formType="submit" class='btn success'>保存</button>
+        <button class='btn del' bindtap="onDelete">删除</button>
+    </view>
+  </view>
+  <view wx:else class="container">
+    <!--标签-->
+    <!-- <view class="tags">
+      <block wx:for="{{ tags }}" wx:key="{{ item }}">
+        <text class="{{ tagCurrent == index ? 'active' : '' }}" data-tagCurrent="{{ index }}" data-tagValue="{{ item }}">{{ item }}</text>
+      </block>
+    </view> -->
+    <view class='title'>
+      <input name="title" disabled="{{ true }}" placeholder-class="placeholder" placeholder="" value="{{item.value.title}}" />
+    </view>
+    <view class='row'>
+      <textarea disabled="{{ true }}" class='text' placeholder-class="placeholder" name="content" focus="{{focus}}" value="{{item.value.content}}" maxlength="-1" placeholder="" />
+    </view>
+    <view class='date placeholder'>
+        {{ item.update_date }}
+    </view>
+  </view>
+</form>

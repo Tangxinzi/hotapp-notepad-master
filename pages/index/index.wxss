@@ -1,0 +1,241 @@
+page {
+  background: #fff;
+}
+
+.col {
+  width: 26%;
+  margin: 25rpx 3.666666%;
+  position: relative;
+  float: left;
+}
+
+.item {
+  width: 100%;
+  height: inherit;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.item .content {
+  flex: 1;
+}
+
+.item .content,
+.item .bottom {
+  height: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.item .bottom {
+  height: 60rpx;
+  background: #9f7968;
+  font-size: 22rpx;
+}
+
+.item .txt {
+  flex: 1;
+  text-align: center;
+}
+
+.item .content .txt.title {
+  font-weight: 600
+}
+
+.item .content .txt.title text {
+  font-weight: 400
+}
+
+.item .content .txt {
+  color: rgba(0, 0, 0, 0.83);
+  padding: 0 3%;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: box;
+  box-orient: vertical;
+  line-clamp: 3;
+}
+
+.item .bottom .txt {
+  color: #fff;
+}
+
+.item.notepad {
+  background: #f0f0f0;
+}
+
+.item.today {
+  background: #fde3d5;
+}
+
+.item.yesterday {
+  background: #d5effd;
+}
+
+.add_box,
+.item.more {
+  border: 6rpx dotted #d9d9d9;
+}
+
+.add_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips_box {
+  position: relative;
+}
+
+.tips_icon {
+  position: absolute;
+  top: -60rpx;
+}
+
+.item.more {
+  background: url(../../images/more.png) no-repeat center center;
+  background-size: 60%;
+}
+
+.cols {}
+
+.tips {
+  position: absolute;
+  z-index: 9;
+  right: -300rpx;
+  bottom: -140rpx;
+}
+
+.tips_txt {
+  width: 360rpx;
+  font-size: 32rpx;
+  padding: 50rpx 0;
+  text-align: center;
+  background: #fff;
+  border-radius: 14rpx;
+}
+
+.tips_icon {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 30rpx;
+  background-size: 100%;
+}
+
+.swiper-item-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.swiper-item-title .item-title {
+  height: 30px;
+  padding: 10px 0;
+  width: 50%;
+  border-bottom: 1px solid #CCC;
+}
+
+.swiper-item-title .item-title.active {
+  width: 50%;
+  border-bottom: 1px solid #FFF;
+}
+
+swiper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  min-height: 100vh !important;
+  background-color: #fff;
+  color: rgba(255, 255, 255, .8);
+}
+
+.time .col {
+  float: none;
+  width: auto;
+  padding-top: 0;
+}
+
+.time .col .item {
+  height: auto;
+}
+
+.time .col .item .content {
+  padding: 10px 2px;
+}
+
+.time .col .item .content,
+.time .col .item .bottom,
+.time .col .item .content .txt {
+  display: block;
+  text-align: left;
+  position: relative;
+  height: auto;
+}
+
+.time .col .item .content .con {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  color: #333333;
+}
+
+.time .col .item .content .txt text {
+  position: absolute;
+  right: 3%;
+  color: #828282;
+}
+
+.container .item .content .txt.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.container .item .content .txt.foot text {
+  position: relative;
+}
+
+button {
+  display: inline;
+  background-color: transparent;
+  border: 0;
+  border-radius: none;
+  padding: 0;
+  line-height: 21px;
+  height: 21px;
+  color: #828282;
+  font-size: 28rpx;
+  position: absolute;
+  right: 3%;
+  top: 0;
+}
+
+button::after,
+button::before {
+  border: 0;
+  content: '';
+  display: inline;
+  background-color: transparent;
+}
+
+swiper-item {
+  overflow: auto !important
+}
